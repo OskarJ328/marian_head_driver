@@ -1,0 +1,14 @@
+# Build outputs
+Debug/
+Release/
+
+# Eclipse/IDE settings
+.metadata/
+.settings/
+*.launch
+
+# Temp files
+*.swp
+*.tmp
+*.bak
+*.log
