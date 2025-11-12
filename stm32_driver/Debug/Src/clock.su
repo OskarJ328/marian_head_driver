@@ -1,0 +1,9 @@
+../Drivers/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	16	static
+../Drivers/CMSIS/Include/core_cm4.h:2022:26:SysTick_Config	16	static
+../Src/clock.c:16:13:setup_GPIOA	4	static
+../Src/clock.c:20:13:setup_TIM3	4	static
+../Src/clock.c:24:13:setup_sysTick	8	static
+../Src/clock.c:28:6:clock_setup	8	static
+../Src/clock.c:43:6:delay_ms	24	static
+../Src/clock.c:50:10:current_time_ms	4	static
+../Src/clock.c:59:6:SysTick_Handler	4	static

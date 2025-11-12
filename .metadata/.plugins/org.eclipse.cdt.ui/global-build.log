@@ -1,0 +1,175 @@
+15:34:14 **** Clean-only build of configuration Debug for project f401_template ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f401ccux.d ./Startup/startup_stm32f401ccux.o
+rm -rf ./Src/clock.cyclo ./Src/clock.d ./Src/clock.o ./Src/clock.su ./Src/gpio.cyclo ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout f401_template.elf f401_template.list f401_template.map
+ 
+15:34:16 **** Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401ccux.d" -MT"Startup/startup_stm32f401ccux.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401ccux.o" "../Startup/startup_stm32f401ccux.s"
+arm-none-eabi-gcc "../Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/clock.d" -MT"Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/clock.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f401_template.elf
+ 
+arm-none-eabi-size  f401_template.elf 
+arm-none-eabi-objdump -h -S f401_template.elf  > "f401_template.list"
+   text	   data	    bss	    dec	    hex	filename
+    952	      0	   1568	   2520	    9d8	f401_template.elf
+Finished building: default.size.stdout
+ 
+Finished building: f401_template.list
+ 
+15:39:22 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/clock.d" -MT"Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/clock.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f401_template.elf
+ 
+arm-none-eabi-size  f401_template.elf 
+arm-none-eabi-objdump -h -S f401_template.elf  > "f401_template.list"
+   text	   data	    bss	    dec	    hex	filename
+    952	      0	   1568	   2520	    9d8	f401_template.elf
+Finished building: default.size.stdout
+ 
+Finished building: f401_template.list
+ 
+20:57:59 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/clock.d" -MT"Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/clock.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/tim.o"
+../Src/main.c: In function 'main':
+../Src/main.c:24:9: warning: implicit declaration of function 'setup_clock' [-Wimplicit-function-declaration]
+   24 |         setup_clock();
+      |         ^~~~~~~~~~~
+../Src/main.c:25:9: warning: implicit declaration of function 'gpio_setup'; did you mean 'gpioa_setup'? [-Wimplicit-function-declaration]
+   25 |         gpio_setup();
+      |         ^~~~~~~~~~
+      |         gpioa_setup
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
+C:/Users/ozker/ezteemy/marian/f401_template/Debug/../Src/main.c:24: undefined reference to `setup_clock'
+C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/ozker/ezteemy/marian/f401_template/Debug/../Src/main.c:25: undefined reference to `gpio_setup'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: f401_template.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:58:33 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:25:9: warning: implicit declaration of function 'gpio_setup'; did you mean 'gpioa_setup'? [-Wimplicit-function-declaration]
+   25 |         gpio_setup();
+      |         ^~~~~~~~~~
+      |         gpioa_setup
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
+C:/Users/ozker/ezteemy/marian/f401_template/Debug/../Src/main.c:25: undefined reference to `gpio_setup'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: f401_template.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:59:34 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c:24:13: error: static declaration of 'gpioa_setup' follows non-static declaration
+   24 | static void gpioa_setup(void){
+      |             ^~~~~~~~~~~
+In file included from ../Src/gpio.c:8:
+../Inc/gpio.h:12:6: note: previous declaration of 'gpioa_setup' with type 'void(void)'
+   12 | void gpioa_setup(void);
+      |      ^~~~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/gpio.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:00:19 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f401_template.elf
+ 
+arm-none-eabi-size  f401_template.elf 
+arm-none-eabi-objdump -h -S f401_template.elf  > "f401_template.list"
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+Finished building: f401_template.list
+ 
+21:00:29 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:06:00 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:06:14 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:07:34 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:08:22 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:14:47 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401CCUx -DSTM32F401xC -DSTM32 -DSTM32F4 -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f401_template.elf
+ 
+arm-none-eabi-size  f401_template.elf 
+arm-none-eabi-objdump -h -S f401_template.elf  > "f401_template.list"
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+Finished building: f401_template.list
+ 
+21:16:57 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-size  f401_template.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+21:19:20 **** Incremental Build of configuration Debug for project f401_template ****
+make -j12 all 
+arm-none-eabi-gcc -o "f401_template.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ozker\ezteemy\marian\f401_template\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f401_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: f401_template.elf
+ 
+arm-none-eabi-size  f401_template.elf 
+arm-none-eabi-objdump -h -S f401_template.elf  > "f401_template.list"
+   text	   data	    bss	    dec	    hex	filename
+   1344	      0	   1568	   2912	    b60	f401_template.elf
+Finished building: default.size.stdout
+ 
+Finished building: f401_template.list
+ 

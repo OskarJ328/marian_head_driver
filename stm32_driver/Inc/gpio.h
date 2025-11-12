@@ -1,0 +1,14 @@
+/*
+ * GPIO.h
+ *
+ *  Created on: Nov 5, 2025
+ *      Author: ozker
+ */
+
+#ifndef GPIO_H_
+#define GPIO_H_
+
+#include "main.h"
+void gpio_setup(void);
+
+#endif /* GPIO_H_ */

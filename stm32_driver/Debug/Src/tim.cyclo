@@ -1,0 +1,4 @@
+../Src/tim.c:21:13:tim3_init	1
+../Src/tim.c:35:6:tim_start	1
+../Src/tim.c:38:6:tim_init	1
+../Src/tim.c:42:6:tim3_set_pwm_duty_permille	3
