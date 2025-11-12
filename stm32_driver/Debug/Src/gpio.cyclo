@@ -1,3 +1,0 @@
-../Src/gpio.c:19:13:gpioa_tim3_setup	1
-../Src/gpio.c:24:13:gpioa_setup	1
-../Src/gpio.c:27:6:gpio_setup	1

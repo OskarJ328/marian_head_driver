@@ -1,4 +1,0 @@
-../Src/tim.c:21:13:tim3_init	4	static
-../Src/tim.c:35:6:tim_start	4	static
-../Src/tim.c:38:6:tim_init	8	static
-../Src/tim.c:42:6:tim3_set_pwm_duty_permille	24	static
