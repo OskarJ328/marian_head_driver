@@ -15,9 +15,20 @@
  *
  ******************************************************************************
  */
-#include "gpio.h"
 #include "clock.h"
-#include "tim.h"
+#include "abstraction.h"
+
+uint32_t check_ccr = 0;
+uint8_t angle = 0;
+
+typedef enum {
+	CHECK_BUTTON,
+	SERVO_UP,
+	SERVO_DOWN
+}state_t;
+
+state_t state = CHECK_BUTTON;
+
 
 int main(void)
 {
@@ -27,9 +38,32 @@ int main(void)
 	tim_start();
 
 	while(1){
-		for(uint32_t duty=0; duty <=1000; duty +=10){
-			tim3_set_pwm_duty_permille(duty);
-			delay_ms(20);
+		
+		switch (state){
+		case CHECK_BUTTON:
+			if (button_read()){
+				state = SERVO_UP;
+			}
+			break;
+		case SERVO_UP:
+			angle += 10;
+			if (angle >=180){
+				angle = 180;
+				state = SERVO_DOWN;
+			}
+			servo_set_angle(angle);
+			delay_ms(200);
+			break;
+		case SERVO_DOWN:
+			if(angle < 10){
+				angle = 0;
+				state = CHECK_BUTTON;
+			}else{
+				angle -= 10;
+			}
+			servo_set_angle(angle);
+			delay_ms(200);
+			break;
 		}
 	}
 }

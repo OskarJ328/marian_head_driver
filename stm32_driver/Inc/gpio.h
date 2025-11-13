@@ -11,4 +11,5 @@
 #include "main.h"
 void gpio_setup(void);
 
+bool gpioa_read(uint8_t pin);
 #endif /* GPIO_H_ */

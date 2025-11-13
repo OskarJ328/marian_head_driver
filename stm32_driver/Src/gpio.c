@@ -8,12 +8,15 @@
 #include "gpio.h"
 
 #define TIM3_CH1_PIN 6
-
+#define BUTTON_PIN 0
 
 
 #define PA6_AF GPIOA->MODER |= (0b10 << (2*TIM3_CH1_PIN))
 #define PA6_HS GPIOA->OSPEEDR |= (0b10 << (2*TIM3_CH1_PIN))
 #define PA6_TIM3 GPIOA->AFR[0] |= (2 << (4*TIM3_CH1_PIN))
+
+#define PA0_PULLUP GPIOA->PUPDR |= 0b01 << (2*BUTTON_PIN)
+
 
 
 static void gpioa_tim3_setup(void){
@@ -21,11 +24,28 @@ static void gpioa_tim3_setup(void){
 	PA6_HS;
 	PA6_TIM3;
 }
+
+static void gpioa_button_setup(void){
+	PA0_PULLUP;
+}
+
 static void gpioa_setup(void){
 	gpioa_tim3_setup();
+	gpioa_button_setup();
 }
 void gpio_setup(void){
 	gpioa_setup();
 }
+
+
+
+bool gpioa_read(uint8_t pin){
+	if(pin > 15){
+		pin = 15;
+	}
+	return GPIOA->IDR & (1 << pin);
+}
+
+
 
 
