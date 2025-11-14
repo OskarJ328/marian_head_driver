@@ -19,7 +19,9 @@
 #include "abstraction.h"
 
 uint32_t check_ccr = 0;
-uint8_t angle = 0;
+uint8_t angle = 90;
+bool dir = false;
+
 
 typedef enum {
 	CHECK_BUTTON,
@@ -39,7 +41,7 @@ int main(void)
 
 	while(1){
 		
-		switch (state){
+		/*switch (state){
 		case CHECK_BUTTON:
 			if (button_read()){
 				state = SERVO_UP;
@@ -64,7 +66,25 @@ int main(void)
 			servo_set_angle(angle);
 			delay_ms(200);
 			break;
+		}*/
+
+
+		if (angle == 180){
+			dir = false;
+		}else if (angle == 0){
+			dir = true;
 		}
+
+		if (button_read()){
+			if (dir){
+				angle +=10;
+			}else{
+				angle -=10;
+			}
+		}
+
+		servo_set_angle(angle);
+		delay_ms(1000);
 	}
 }
 

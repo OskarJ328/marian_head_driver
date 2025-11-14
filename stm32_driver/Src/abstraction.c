@@ -7,8 +7,8 @@
 
 #include "abstraction.h"
 
-#define MIN_CCR 1000
-#define MAX_CCR 2000
+#define MIN_CCR 500
+#define MAX_CCR 2500
 #define MAX_ANGLE 180
 
 
