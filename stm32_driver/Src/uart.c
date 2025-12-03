@@ -24,19 +24,35 @@
 #define UART2_RE USART2->CR1 |= 1 << 2
 #define UART2_TE USART2->CR1 |= 1 << 3
 #define UART2_EN USART2->CR1 |= 1 << 13
-
-void uart_init(void){
-    uart2_init();
-}
+#define USART2_TXE_EMPTY (USART2->SR & 1 << 7)
 
 
-void uart2_init(void){
+
+static void uart2_init(void){
     UART2_SET_BRR;
     UART2_TE;
     UART2_RE;
     UART2_EN;
 }
+
+void uart_init(void){
+    uart2_init();
+}
  
+void uart2_send_char(char c){
+     while(!USART2_TXE_EMPTY);
+
+     USART2->DR = (uint8_t)c; //rzutujemy bo rejestr dr jest wiekszy niz 8-bit i liczba ze znakiem moglaby byc zle zinterpretowana
+
+}
+
+void uart2_send_string(char *s){
+    while(*s != '\0'){
+        uart2_send_char(*s);
+        s++;
+    }
+}
+
 
 
 

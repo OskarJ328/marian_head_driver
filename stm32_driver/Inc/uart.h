@@ -10,5 +10,7 @@
 
 #include "main.h"
 
-
+void uart_init(void);
+void uart2_send_char(char c);
+void uart2_send_string(char *s);
 #endif /* UART_H_ */

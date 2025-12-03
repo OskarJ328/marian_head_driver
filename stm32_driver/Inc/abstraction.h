@@ -11,7 +11,6 @@
 #include "tim.h"
 #include "gpio.h"
 
-
 uint32_t servo_set_angle(uint8_t angle);
 
 bool button_read(void);
